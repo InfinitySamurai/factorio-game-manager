@@ -2,6 +2,7 @@ require("map_sets")
 
 script.on_init(function()
 	spectator_surface = game.create_surface("spectator", map_sets.spectator_box.gen_settings)
+	spectator_surface.always_day = true
 	mapheight = map_sets.spectator_box.gen_settings.height
 	mapwidth = map_sets.spectator_box.gen_settings.width
 end
