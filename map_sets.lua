@@ -7,6 +7,10 @@ map_sets = {
 			height = 20
 		}
 	
+	},
+	
+	entities = {
+		light1 = {name = "small-lamp", position = {-5,-5}},
+		light2 = {name = "small-lamp", position = {-5, 5}}
 	}
-
 }

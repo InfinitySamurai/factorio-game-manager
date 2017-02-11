@@ -5,12 +5,14 @@ script.on_init(function()
 	spectator_surface.always_day = true
 	mapheight = map_sets.spectator_box.gen_settings.height
 	mapwidth = map_sets.spectator_box.gen_settings.width
+
 end
 )
 
 script.on_event(defines.events.on_player_joined_game, function(event)
 	player = game.players[event.player_index]
 	player.teleport({0,0}, "spectator")
+	player.color =  {r = 0, g = 0, b = 1, a = 1}
 end
 )
 
@@ -31,6 +33,10 @@ script.on_event(defines.events.on_tick, function(event)
 			if ent.name ~= "player" then
 				ent.destroy()
 			end
+		end
+		
+		for _ , ent in pairs(map_sets.entities) do
+			spectator_surface.create_entity(ent)
 		end
 	end
 
